@@ -12,10 +12,6 @@
 </head>
 <body>
 
-{{-- @foreach (Config::get('customs.info.mang') as $element)
-	<p>{{ 'Thứ tự ' . $element }}</p>
-@endforeach --}}
-
 <!--header-->
 @include('partials.header')
 
