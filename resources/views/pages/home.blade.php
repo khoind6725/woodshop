@@ -11,7 +11,6 @@
     @include('partials.css')
 </head>
 <body>
-
 <!--header-->
 @include('partials.header')
 
@@ -23,6 +22,5 @@
 
 <!--js-->
 @include('partials.js')
-
 </body>
 </html>
