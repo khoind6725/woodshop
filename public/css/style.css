@@ -147,10 +147,10 @@ header.row.affix .social-info {
   margin-left: 20px;
 }
 .social-info .social-icon li.tel {
-  margin-left: 48px;
+  margin-left: 20px;
 }
 .social-info .social-icon li.email {
-  margin-left: 25px;
+  margin-left: 10px;
 }
 .social-info .social-icon li a {
   font: 15px/30px "Open Sans", sans-serif;
@@ -279,7 +279,7 @@ header.row.affix .social-info {
 }
 
 .navbar-default .menu .navbar-collapse .navbar-nav li a {
-  font: 600 14px/48px "Raleway", sans-serif;
+  font: 520 18px/45px "Open Sans", sans-serif;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   text-shadow: none;
@@ -1864,7 +1864,6 @@ header.row.affix .social-info {
 
 /*====================================================*/
 .header-breadcrumb {
-  background: url("../images/about/banner.jpg") no-repeat scroll center 0 transparent;
   -webkit-background-size: cover;
   background-size: cover;
   padding: 212px 0px 88px;

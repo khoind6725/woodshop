@@ -12,7 +12,7 @@
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="nav navbar-nav">
                     @foreach ( Config::get('customs.links') as $key => $value )
-                        @if (count($value) > 1)
+                        @if (is_array($value))
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $key }}</a>
                                 <ul class="dropdown-menu">
@@ -21,8 +21,12 @@
                                 @endforeach
                                 </ul>
                             </li>
-                        @else 
-                            <li><a href="{{ route($key) }}">{{ $value }}</a></li> 
+                        @else
+                            @if ($key == 'home')
+                                <li><a href="{{ route($key) }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> {{ $value }}</a></li> 
+                            @else
+                                <li><a href="{{ route($key) }}">{{ $value }}</a></li> 
+                            @endif 
                         @endif                    
                     @endforeach
                 </ul>

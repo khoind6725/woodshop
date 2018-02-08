@@ -1,13 +1,13 @@
 <section class="emergency-contact">
     <div class="left-side">
         <div class="content">
-            <h3>If you have any wood work  need...</h3>
-            <h3>Simply call our 24 hour emergecny number.</h3>
-            <a href="tel:+018655248503" class="phone"><img src="images/great-work/phone.png" alt="">01865 524 8503</a>
-            <a href="tel:+018655248503" class="email"><img src="images/great-work/email.png" alt="">info@woodworshop.com</a>
+            <h3>Nếu bạn có nhu cầu đặt hàng, sửa chữa về khuôn cửa gỗ, đồ gỗ nội thất, nhà cửa, nhà cổ truyền...</h3>
+            <h3><i>Hãy gọi ngay cho chúng tôi</i></h3>
+            <a href="tel:{{ Config::get('customs.info.phone') }}" class="phone"><img src="images/great-work/phone.png">{{ Config::get('customs.info.phone') }}</a>
+            <a href="mailto:{{ Config::get('customs.info.email') }}" class="email"><img src="images/great-work/email.png">{{ Config::get('customs.info.email') }}</a>
         </div>
     </div>
     <div class="right-side">
-        <img src="images/great-work/right-img.jpg" alt="">
+        <img src="images/great-work/right-img.jpg">
     </div>
 </section>

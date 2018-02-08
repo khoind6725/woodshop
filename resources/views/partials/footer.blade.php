@@ -43,19 +43,19 @@
                             <li>
                                 <i class="fa fa-phone"></i>
                                 <div class="fleft contact_no">
-                                    <a href="#">{{ Config::get('customs.info.phone') }}</a>
+                                    <a href="tel:{{ Config::get('customs.info.phone') }}">{{ Config::get('customs.info.phone') }}</a>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o"></i>
                                 <div class="fleft contact_mail">
-                                    <a href="#">{{ Config::get('customs.info.email') }}</a>
+                                    <a href="mailto:{{ Config::get('customs.info.email') }}">{{ Config::get('customs.info.email') }}</a>
                                 </div>
                             </li>
                             <li>
                                 <i class="icon icon-WorldWide"></i>
                                 <div class="fleft service_time">
-                                    Mon - Sat : 9am to 6pm Sunday Close
+                                    Làm việc từ 8h00 tới 19h00 hàng ngày
                                 </div>
                             </li>
                         </ul>

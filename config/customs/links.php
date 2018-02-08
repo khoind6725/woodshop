@@ -14,6 +14,12 @@ return [
 		'trang-tri' => 'Trang trí'
 	],
 	'nha-co-truyen' => 'Nhà cổ truyền',
-	'gioi-thieu' => 'Giới thiệu',
-	'lien-he' => 'Liên hệ'
+	'san-pham' => 'Sản phẩm',
+	'cong-trinh' => 'Công trình',
+	'goc-chia-se' => 'Góc chia sẻ',
+	'Về chúng tôi' => [
+		'dich-vu' => 'Dịch vụ',
+		'gioi-thieu' => 'Giới thiệu',
+		'lien-he' => 'Liên hệ'
+	]
 ];

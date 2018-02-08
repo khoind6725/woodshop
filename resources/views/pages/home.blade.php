@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Wood workshop</title>
-    
-    <!--css-->
-    @include('partials.css')
-</head>
-<body>
-<!--header-->
-@include('partials.header')
+@extends('partials.layout')
+@section('content')
+<!--rv-slider-->
+@include('components.rev_slider')
 
-<!--contents-->
-@include('partials.contents')
+<!--experiance-area-->
+@include('components.experience_area')
 
-<!--footer-->
-@include('partials.footer')
+<!--we-do-->
+@include('components.we_do')
 
-<!--js-->
-@include('partials.js')
-</body>
-</html>
+<!-- Projects -->
+@include('components.projects')
+
+<!--work_shop-->
+@include('components.work_shop')
+
+<!--testimonial-->
+@include('components.testimonial')
+
+<!-- latest_news_area -->
+@include('components.latest_news_area')
+
+<!-- clients -->
+@include('components.clients')
+
+<!--great_work-->
+@include('components.great_work')
+@endsection
