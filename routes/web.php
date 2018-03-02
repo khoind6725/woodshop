@@ -84,3 +84,10 @@ Route::get('/lien-he', function() {
 	return view('pages.contact');
 })->name('lien-he');
 
+Auth::routes();
+
+Route::get('/admin', function() {
+    echo "admin page";
+})->middleware('auth');
+
+// Route::get('/home', 'HomeController@index')->name('home');
