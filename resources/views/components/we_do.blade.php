@@ -1,7 +1,7 @@
 <section class="row sectpad we-do-section">
     <div class="container">
         <div class="row m0 section_header color">
-           <h2>What we do</h2> 
+           <h2>Công trình đồ gỗ của chúng tôi</h2> 
         </div>
         <div class="we-do-slider">
             <div class="we-sliders">

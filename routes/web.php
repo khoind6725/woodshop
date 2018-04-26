@@ -11,83 +11,88 @@
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('pages.home');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('front-end.home');
 
 Route::get('/khuon-cua', function() {
     return view('pages.product_detail');
-})->name('khuon-cua');
+})->name('front-end.khuon-cua');
 
 Route::get('/cau-thang', function() {
     return view('pages.product_detail');
-})->name('cau-thang');
+})->name('front-end.cau-thang');
 
 Route::get('/nha-co-truyen', function() {
     return view('pages.product_detail');
-})->name('nha-co-truyen');
+})->name('front-end.nha-co-truyen');
 
 Route::get('/dich-vu', function() {
     return view('pages.service');
-})->name('dich-vu');
+})->name('front-end.dich-vu');
 
 Route::get('/cong-trinh', function() {
     return view('pages.projects');
-})->name('cong-trinh');
+})->name('front-end.cong-trinh');
 
 Route::get('/san-pham', function() {
     return view('pages.products');
-})->name('san-pham');
+})->name('front-end.san-pham');
 
 Route::get('/chi-tiet-san-pham', function() {
     return view('pages.product_detail');
-})->name('chi-tiet-san-pham');
+})->name('front-end.chi-tiet-san-pham');
 
-Route::get('/goc-chia-se', function() {
+Route::get('/kinh-nghiem', function() {
     return view('pages.blog');
-})->name('goc-chia-se');
+})->name('front-end.kinh-nghiem');
 
-Route::get('/chi-tiet-goc-chia-se', function() {
+Route::get('/chi-tiet-kinh-nghiem', function() {
     return view('pages.blog_detail');
-})->name('chi-tiet-goc-chia-se');
+})->name('front-end.chi-tiet-kinh-nghiem');
 
 Route::get('/chi-tiet-cong-trinh', function() {
     return view('pages.project_detail');
-})->name('chi-tiet-cong-trinh');
+})->name('front-end.chi-tiet-cong-trinh');
 
 Route::get('/quan-ao', function() {
     return view('pages.product_detail');
-})->name('quan-ao');
+})->name('front-end.quan-ao');
 
 Route::get('/tu-bep', function() {
     return view('pages.product_detail');
-})->name('tu-bep');
+})->name('front-end.tu-bep');
 
 Route::get('/giuong-ngu', function() {
     return view('pages.product_detail');
-})->name('giuong-ngu');
+})->name('front-end.giuong-ngu');
 
 Route::get('/ban-an', function() {
     return view('pages.product_detail');
-})->name('ban-an');
+})->name('front-end.ban-an');
 
 Route::get('/trang-tri', function() {
     return view('pages.product_detail');
-})->name('trang-tri');
+})->name('front-end.trang-tri');
 
 Route::get('/gioi-thieu', function() {
 	return view('pages.about');
-})->name('gioi-thieu');
+})->name('front-end.gioi-thieu');
 
 Route::get('/lien-he', function() {
 	return view('pages.contact');
-})->name('lien-he');
+})->name('front-end.lien-he');
+
+Route::resource('/demotext', 'DemoController');
 
 Auth::routes();
 
-Route::get('/admin', function() {
-    echo "admin page";
-})->middleware('auth');
+Route::group([
+    'middleware' => 'auth', 
+    'prefix' => 'adm'
+], function() {
 
-// Route::get('/home', 'HomeController@index')->name('home');
+    // Dashboard
+    Route::get('/', function() {
+        return view('adm.layout');
+    });
+
+});

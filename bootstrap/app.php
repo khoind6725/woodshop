@@ -41,6 +41,11 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+// KhoiND add
+// file START ommited
+$app->register(Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class);
+// file END ommited
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

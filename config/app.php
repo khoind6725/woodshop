@@ -177,6 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // KhoiND add
+        // other providers ommited
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
     ],
 
     /*
@@ -226,6 +229,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // KhoiND add
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
     ],
 
 ];

@@ -9,6 +9,9 @@
     
     <!--css-->
     @include('partials.css')
+    
+    <!--seo tag header-->
+    {!! SEO::generate() !!}
 </head>
 <body>
 <!--header-->

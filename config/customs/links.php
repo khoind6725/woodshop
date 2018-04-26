@@ -1,25 +1,25 @@
 <?php 
 
 return [
-	'home' => 'Trang chủ',
+	'front-end.home' => 'Trang chủ',
 	'Đồ gỗ' => [
-		'khuon-cua' => 'Khuôn cửa',
-		'cau-thang' => 'Cầu thang'
+		'front-end.khuon-cua' => 'Khuôn cửa',
+		'front-end.cau-thang' => 'Cầu thang'
 	],
 	'Nội thất' => [
-		'quan-ao' => 'Quần áo',
-		'tu-bep' => 'Tủ bếp',
-		'giuong-ngu' => 'Giường ngủ',
-		'ban-an'	=> 'Bàn ăn',
-		'trang-tri' => 'Trang trí'
+		'front-end.quan-ao' => 'Quần áo',
+		'front-end.tu-bep' => 'Tủ bếp',
+		'front-end.giuong-ngu' => 'Giường ngủ',
+		'front-end.ban-an'	=> 'Bàn ăn',
+		'front-end.trang-tri' => 'Trang trí'
 	],
-	'nha-co-truyen' => 'Nhà cổ truyền',
-	'san-pham' => 'Sản phẩm',
-	'cong-trinh' => 'Công trình',
-	'goc-chia-se' => 'Góc chia sẻ',
+	'front-end.nha-co-truyen' => 'Nhà cổ truyền',
+	'front-end.san-pham' => 'Sản phẩm',
+	'front-end.cong-trinh' => 'Công trình',
+	'front-end.kinh-nghiem' => 'Kinh nghiệm',
 	'Về chúng tôi' => [
-		'dich-vu' => 'Dịch vụ',
-		'gioi-thieu' => 'Giới thiệu',
-		'lien-he' => 'Liên hệ'
+		'front-end.dich-vu' => 'Dịch vụ',
+		'front-end.gioi-thieu' => 'Giới thiệu',
+		'front-end.lien-he' => 'Liên hệ'
 	]
 ];

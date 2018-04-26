@@ -6,12 +6,11 @@
 <meta name="theme-color" content="#ffffff">
 
 <!--    fonts-->
-<link href='https://fonts.googleapis.com/css?family=Raleway:800,700,500,400,600' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,300italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700' rel='stylesheet' type='text/css'>
-
-<link href='https://fonts.googleapis.com/css?family=Alegreya:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link  href="{{ asset('css/Raleway_800_700_500_400_600.css') }}" rel="stylesheet">
+<link  href="{{ asset('css/Lato_400_300_700_300_italic.css') }}" rel="stylesheet">
+<link  href="{{ asset('css/PT_Serif_400_400_italic_700.css') }}" rel="stylesheet">
+<link  href="{{ asset('css/Alegreya_400_700_700_italic_400_italic.css') }}" rel="stylesheet">
+<link  href="{{ asset('css/Open_Sans_400_300_300_italic_400_italic_600_600_italic_700_700_italic_800_800_italic.css') }}" rel="stylesheet">
 
 <!-- Bootstrap -->
 <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
