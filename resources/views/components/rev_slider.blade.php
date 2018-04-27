@@ -9,7 +9,6 @@
                     data-whitespace="nowrap"
                     data-start="900">
                     we are available
-
                 </div>
                 <div class="tp-caption sfb tp-resizeme carpenters-h2" 
                     data-x="0" data-hoffset="690" 

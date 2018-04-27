@@ -86,13 +86,16 @@ Route::resource('/demotext', 'DemoController');
 Auth::routes();
 
 Route::group([
-    'middleware' => 'auth', 
+    // 'middleware' => 'auth', 
+    'as' => 'adm.',
     'prefix' => 'adm'
 ], function() {
 
     // Dashboard
     Route::get('/', function() {
         return view('adm.layout');
-    });
+    })->name('home');
+
+    Route::resource('/slider', 'SliderController');
 
 });
