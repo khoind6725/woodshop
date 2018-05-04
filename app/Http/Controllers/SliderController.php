@@ -13,7 +13,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        echo 'slider index';
+        return view('adm.slider.index');
     }
 
     /**
@@ -34,7 +34,19 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->has('inputSlider')) {
+            $image = $request->input('inputSlider'); // your base64 encoded
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = str_replace(' ', '+', $image);
+            $fileName = "slider-".time().".png";
+            \File::put(public_path() . '/images/slider-img/' . $fileName, base64_decode($image));
+            return redirect()->route('adm.slider.index')
+                        ->with('success', trans('slider.upload_success'));
+        }
+        else {
+            return redirect()->route('adm.slider.index')
+                        ->with('error', trans('slider.upload_error'));
+        }
     }
 
     /**
@@ -45,7 +57,7 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('adm.pages.slider');
     }
 
     /**

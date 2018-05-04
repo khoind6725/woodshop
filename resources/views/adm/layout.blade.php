@@ -9,7 +9,7 @@
     
     <!--css-->
     @include('adm.partials.css')
-    
+    @yield('css_files')
     <!--seo tag header-->
     {!! SEO::generate() !!}
 </head>
@@ -24,7 +24,10 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Main content -->
-            @include('adm.partials.content')
+            <section class="content">
+            @include('flash-message')
+            @yield('content')
+            </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -43,6 +46,7 @@
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('js/demo.js') }}"></script>
+    @yield('js_files')
     <script>
     $(document).ready(function() {
         $('.sidebar-menu').tree()

@@ -180,6 +180,8 @@ return [
         // KhoiND add
         // other providers ommited
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        // LaravelCollective
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -231,6 +233,8 @@ return [
 
         // KhoiND add
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];
