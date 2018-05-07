@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal-id">
+<div class="modal fade" id="modalFormSlider">
 	<div class="modal-dialog">
 		{{ 
 			Form::open([
@@ -18,6 +18,21 @@
 						<img id="previewSlider" src="{{ asset('images/slider-img/bg.jpg') }}">
 						<input type="file" class="sr-only" id="inputSlider" name="inputSlider">
 					</label>
+				</div>
+				<div class="form-group">
+					<label for="descriptionSlider">Mô tả</label>
+					{{
+						Form::textarea(
+							'descriptionSlider', 
+							'', 
+							[
+								'placeholder' => 'Nhập mô tả',
+								'class' => 'form-control',
+								'rows' => 3
+							]
+						)
+					}}
+
 				</div>
 			</div>
 			<div class="modal-footer">

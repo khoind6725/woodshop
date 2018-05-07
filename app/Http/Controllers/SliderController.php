@@ -3,9 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\SliderRepository;
+use App\Repositories\Interfaces\SliderRepositoryInterface;
+use App\Models\Slider;
+use Log;
+use Util;
 
 class SliderController extends Controller
 {
+
+    protected $sliderRepository;
+
+    public function __construct(SliderRepositoryInterface $sliderRepository)
+    {
+        $this->sliderRepository = $sliderRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,39 +47,35 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->has('inputSlider')) {
-            $image = $request->input('inputSlider'); // your base64 encoded
-            $image = str_replace('data:image/png;base64,', '', $image);
-            $image = str_replace(' ', '+', $image);
-            $fileName = "slider-".time().".png";
-            \File::put(public_path() . '/images/slider-img/' . $fileName, base64_decode($image));
+        try {
+            $this->sliderRepository->create($request);
             return redirect()->route('adm.slider.index')
-                        ->with('success', trans('slider.upload_success'));
-        }
-        else {
-            return redirect()->route('adm.slider.index')
-                        ->with('error', trans('slider.upload_error'));
+                    ->with('success', trans('slider.upload_success'));
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            redirect()->route('adm.slider.index')
+                    ->with('error', trans('slider.upload_error'));
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        return view('adm.pages.slider');
+        return (new Util())->printText('hello');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Slider $slider)
     {
         //
     }
@@ -75,10 +84,10 @@ class SliderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Slider $slider)
     {
         //
     }
@@ -86,10 +95,10 @@ class SliderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Slider $slider)
     {
         //
     }

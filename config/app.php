@@ -235,6 +235,7 @@ return [
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Util' => App\Libraries\Util::class,
     ],
 
 ];

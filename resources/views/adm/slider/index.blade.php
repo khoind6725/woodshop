@@ -38,7 +38,7 @@
 
 @section('content')
 <div class="form-group">
-	<button type="button" data-toggle="modal" class="btn btn-success" href="#modal-id"><span class="fa fa-plus"></span>&nbsp;Thêm mới</button>
+	<button type="button" data-toggle="modal" class="btn btn-success" href="#modalFormSlider"><span class="fa fa-plus"></span>&nbsp;Thêm mới</button>
 </div>
 <div class="panel panel-info">
 	<div class="panel-heading">
@@ -58,7 +58,7 @@
 				@foreach (glob(public_path() . '/images/slider-img/*') as $index => $filename)
 				<tr>
 					<td>
-						{{ $index + 1 }}
+						{{ $index }}
 					</td>
 					<td class="img-slider">
 						<img src="{{ URL::to('/images/slider-img') . '/' .basename($filename) }}" alt="{{ $index }}">
@@ -68,7 +68,7 @@
 						<div class="form-group">
 							<button type="button" class="btn btn-info"><span class="fa fa-eye"></span></button>
 							<button type="button" class="btn btn-warning"><span class="fa fa-pencil-square-o"></span></button>
-							<button type="button" class="btn btn-danger"><span class="fa fa-trash"></span></button>
+							<button type="button" class="btn btn-danger" data-index={{ $index }} data-toggle="modal" href='#modalDelete'><span class="fa fa-trash"></span></button>
 						</div>
 					</td>
 				</tr>
@@ -79,6 +79,7 @@
 </div>
 @endsection
 @include('adm.slider.form')
+@include('adm.slider.modal_delete', ['itemName' => 'Slider', 'id' => 1])
 
 @section('js_files')
 <!-- Cropper.js's JS -->
@@ -105,6 +106,11 @@ $(document).ready(function() {
 		var imgData = cropper.getCroppedCanvas().toDataURL();
 		$inputSlider.attr('type', 'text');
 		$inputSlider.val(imgData);
+	});
+
+	$('button[href="#modalDelete"]').click(function() {
+		let index = $(this).attr('data-index');
+		$('.name-item').html(index);
 	});
 });
 </script>
