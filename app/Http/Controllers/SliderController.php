@@ -26,7 +26,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        return view('adm.slider.index');
+        $sliders = Slider::all();
+        return view('adm.slider.index', compact('sliders'));
     }
 
     /**

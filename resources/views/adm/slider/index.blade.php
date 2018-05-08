@@ -7,12 +7,16 @@
 	.table>thead>tr>th,
 	.table>tbody>tr>td:first-child,
 	.table>tbody>tr>td:nth-child(2),
-	.table>tbody>tr>td:nth-child(4) {
+	.table>tbody>tr>td:nth-child(4),
+	.table>tbody>tr>td:nth-child(5),
+	.table>tbody>tr>td:nth-child(6) {
 		text-align: center;
 	}
 	
 	.table>tbody>tr>td:first-child,
-	.table>tbody>tr>td:nth-child(4) {
+	.table>tbody>tr>td:nth-child(4),
+	.table>tbody>tr>td:nth-child(5),
+	.table>tbody>tr>td:nth-child(6) {
 		vertical-align: middle;
 	}
 
@@ -48,31 +52,37 @@
 		<table class="table table-bordered table-hover">
 			<thead>
 				<tr>
-					<th class="col-md-1">STT</th>
+					<th class="col-md-1">ID</th>
 					<th class="col-md-3">Image Slider</th>
-					<th class="col-md-6">Description</th>
+					<th class="col-md-4">Description</th>
+					<th class="col-md-1">Set Active</th>
+					<th class="col-md-1">Vị trí Active</th>
 					<th class="col-md-2">Hành động</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach (glob(public_path() . '/images/slider-img/*') as $index => $filename)
-				<tr>
-					<td>
-						{{ $index }}
-					</td>
-					<td class="img-slider">
-						<img src="{{ URL::to('/images/slider-img') . '/' .basename($filename) }}" alt="{{ $index }}">
-					</td>
-					<td></td>
-					<td>
-						<div class="form-group">
-							<button type="button" class="btn btn-info"><span class="fa fa-eye"></span></button>
-							<button type="button" class="btn btn-warning"><span class="fa fa-pencil-square-o"></span></button>
-							<button type="button" class="btn btn-danger" data-index={{ $index }} data-toggle="modal" href='#modalDelete'><span class="fa fa-trash"></span></button>
-						</div>
-					</td>
-				</tr>
-				@endforeach
+				@if (isset($sliders))
+					@foreach ($sliders as $index => $slider)
+						<tr>
+							<td>
+								{{ $index }}
+							</td>
+							<td class="img-slider">
+								<img src="{{ asset($slider->img_url) }}" alt="{{ $index }}">
+							</td>
+							<td>{{ $slider->description }}</td>
+							<td>{{ $slider->set_active }}</td>
+							<td>{{ $slider->position_active }}</td>
+							<td>
+								<div class="form-group">
+									<button type="button" class="btn btn-info"><span class="fa fa-eye"></span></button>
+									<button type="button" class="btn btn-warning"><span class="fa fa-pencil-square-o"></span></button>
+									<button type="button" class="btn btn-danger" data-index={{ $index }} data-toggle="modal" href='#modalDelete'><span class="fa fa-trash"></span></button>
+								</div>
+							</td>
+						</tr>
+					@endforeach
+				@endif
 			</tbody>
 		</table>
 	</div>

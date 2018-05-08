@@ -20,6 +20,19 @@
 					</label>
 				</div>
 				<div class="form-group">
+					<label for="sliderName">Tên Slider</label>
+					{{
+						Form::text(
+							'sliderName',
+							'',
+							[
+								'placeholder' => 'Nhập tên Slider',
+								'class' => 'form-control'
+							]
+						)
+					}}
+				</div>
+				<div class="form-group">
 					<label for="descriptionSlider">Mô tả</label>
 					{{
 						Form::textarea(
@@ -32,7 +45,50 @@
 							]
 						)
 					}}
-
+				</div>
+				<div class="form-group">
+					<label for="setActiveSlider">Chọn hiển thị</label>
+					<div class="radio">
+						<label>
+						{{
+							Form::radio(
+								'setActiveSlider',
+								1,
+								false
+							)
+						}}
+						Có
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+						{{
+							Form::radio(
+								'setActiveSlider',
+								0,
+								true
+							)
+						}}
+						Không
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="positionActive">Vị trí hiển thị trên trang chủ</label>
+					{{
+						Form::select(
+							'positionActive',
+							[
+								1 => '1',
+								2 => '2',
+								3 => '3'
+							],
+							'',
+							[
+								'class' => 'form-control'
+							]
+						)
+					}}
 				</div>
 			</div>
 			<div class="modal-footer">
