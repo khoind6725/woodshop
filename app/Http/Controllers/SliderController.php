@@ -7,7 +7,6 @@ use App\Repositories\SliderRepository;
 use App\Repositories\Interfaces\SliderRepositoryInterface;
 use App\Models\Slider;
 use Log;
-use Util;
 
 class SliderController extends Controller
 {
@@ -54,7 +53,7 @@ class SliderController extends Controller
                     ->with('success', trans('slider.upload_success'));
         } catch (Exception $e) {
             Log::error($e->getMessage());
-            redirect()->route('adm.slider.index')
+            return redirect()->route('adm.slider.index')
                     ->with('error', trans('slider.upload_error'));
         }
     }
@@ -67,7 +66,20 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        return (new Util())->printText('hello');
+
+        $slider = $this->sliderRepository->find($id);
+
+        if ($slider != null) {
+            return response()->json([
+                'status' => 'OK',
+                'slider' => $slider
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 'NG',
+            ]);
+        }
     }
 
     /**
@@ -99,8 +111,16 @@ class SliderController extends Controller
      * @param  \App\Models\Slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy(Request $request, $id)
     {
-        //
+        try {
+            $this->sliderRepository->destroy($id);
+            return redirect()->route('adm.slider.index')
+                    ->with('success', trans('slider.delete_success'));
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            redirect()->route('adm.slider.index')
+                    ->with('error', trans('slider.delete_error'));
+        }
     }
 }

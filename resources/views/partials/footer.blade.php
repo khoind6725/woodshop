@@ -21,11 +21,9 @@
                     <h4 class="widget_title">Dịch vụ của chúng tôi</h4>
                     <div class="widget-contact-list row m0">
                         <ul>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Interior Furniture</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Hardwood Flooring</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Renovation of Office Furniture</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Repairing of Wood Roof</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Outdoor Furniture</a></li>
+                            @foreach ( Config::get('customs.footers.services') as $route => $name )
+                                <li><a href="{{ route($route) }}"><i class="fa fa-angle-right"></i>{{ $name }}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

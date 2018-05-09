@@ -30,19 +30,12 @@ class SliderRepository implements SliderRepositoryInterface
             $slider->save();
         });
     }
-
-    public function update($request)
-    {
-        
-    }
-
-    public function find($id)
-    {
-        
-    }
-
+    
     public function destroy($id)
     {
-        
+        DB::transaction(function () use ($id) {
+            $slider = Slider::find($id);
+            $slider->delete();
+        });
     }
 }

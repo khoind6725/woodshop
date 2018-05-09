@@ -42,7 +42,7 @@
 
 @section('content')
 <div class="form-group">
-	<button type="button" data-toggle="modal" class="btn btn-success" href="#modalFormSlider"><span class="fa fa-plus"></span>&nbsp;Thêm mới</button>
+	<button type="button" data-toggle="modal" class="btn btn-success" href="#addFormSlider"><span class="fa fa-plus"></span>&nbsp;Thêm mới</button>
 </div>
 <div class="panel panel-info">
 	<div class="panel-heading">
@@ -62,22 +62,20 @@
 			</thead>
 			<tbody>
 				@if (isset($sliders))
-					@foreach ($sliders as $index => $slider)
+					@foreach ($sliders as $slider)
 						<tr>
 							<td>
-								{{ $index }}
+								{{ $slider->id }}
 							</td>
 							<td class="img-slider">
-								<img src="{{ asset($slider->img_url) }}" alt="{{ $index }}">
+								<img src="{{ asset($slider->img_url) }}" alt="{{ $slider->id }}">
 							</td>
 							<td>{{ $slider->description }}</td>
 							<td>{{ $slider->set_active }}</td>
 							<td>{{ $slider->position_active }}</td>
 							<td>
 								<div class="form-group">
-									<button type="button" class="btn btn-info"><span class="fa fa-eye"></span></button>
-									<button type="button" class="btn btn-warning"><span class="fa fa-pencil-square-o"></span></button>
-									<button type="button" class="btn btn-danger" data-index={{ $index }} data-toggle="modal" href='#modalDelete'><span class="fa fa-trash"></span></button>
+									<button type="button" class="btn btn-danger" data-index={{ $slider->id }} data-toggle="modal" href='#modalDelete'><span class="fa fa-trash"></span></button>
 								</div>
 							</td>
 						</tr>
@@ -88,7 +86,7 @@
 	</div>
 </div>
 @endsection
-@include('adm.slider.form')
+@include('adm.slider.add_form')
 @include('adm.slider.modal_delete', ['itemName' => 'Slider', 'id' => 1])
 
 @section('js_files')
@@ -100,7 +98,7 @@ $(document).ready(function() {
 	var previewSlider = document.getElementById('previewSlider');
 	var $inputSlider = $('#inputSlider');
 	var options = {
-		aspectRatio: 16/9,
+		aspectRatio: 192/74,
 		viewMode: 3
 	};
 	var cropper = new Cropper(previewSlider, options);
@@ -112,7 +110,7 @@ $(document).ready(function() {
 	  	}
 	});
 
-	$('#createSlider').submit(function(event) {
+	$('#createSlider').submit(function() {
 		var imgData = cropper.getCroppedCanvas().toDataURL();
 		$inputSlider.attr('type', 'text');
 		$inputSlider.val(imgData);
@@ -121,6 +119,7 @@ $(document).ready(function() {
 	$('button[href="#modalDelete"]').click(function() {
 		let index = $(this).attr('data-index');
 		$('.name-item').html(index);
+		$('#deleteSlider').attr('action', 'slider/' + index);
 	});
 });
 </script>

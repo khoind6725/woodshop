@@ -28,7 +28,7 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-image"></i> 
-                    <span>Quản lý các widget</span>
+                    <span>Quản lý ảnh components</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>

@@ -1,3 +1,9 @@
+{{ 
+	Form::open([
+		'id' => 'deleteSlider',
+		'method' => 'delete',
+	])
+}}
 <div class="modal fade" id="modalDelete">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -10,8 +16,11 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
-				<button type="button" class="btn btn-danger">Đồng ý</button>
+				<button type="submit" class="btn btn-danger" id="btnDeleteSlider">Đồng ý</button>
 			</div>
 		</div>
 	</div>
 </div>
+{{ 
+	Form::close()
+}}

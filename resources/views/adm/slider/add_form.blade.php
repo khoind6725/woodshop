@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalFormSlider">
+<div class="modal fade" id="addFormSlider">
 	<div class="modal-dialog">
 		{{ 
 			Form::open([
