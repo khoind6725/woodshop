@@ -19,12 +19,15 @@ class SliderRepository implements SliderRepositoryInterface
         DB::transaction(function () use ($request) {
             $image = ( new Util)->base64_decode_to_image( $request->input('inputSlider'));
             $fileName = "slider-".time().".png";
-            $pathFile = public_path() . '/images/slider-img/' . $fileName;
+            if (!is_dir(public_path() . '/images/sliders/')) {
+                mkdir(public_path() . '/images/sliders/', 0777);
+            }
+            $pathFile = public_path() . '/images/sliders/' . $fileName;
             \File::put( $pathFile, $image);
             $slider = new Slider;
             $slider->slider_name = trim($request->input('sliderName'));
             $slider->description = trim($request->input('descriptionSlider'));
-            $slider->img_url = 'images/slider-img/' . $fileName;
+            $slider->img_url = 'images/sliders/' . $fileName;
             $slider->set_active = $request->has('setActiveSlider') ? $request->input('setActiveSlider') : 0;
             $slider->position_active = $request->has('positionActive') ? $request->input('positionActive') : -1;
             $slider->save();

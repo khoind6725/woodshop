@@ -5,7 +5,7 @@
                 <img src="images/services/1.jpg" alt="">
             </div>
             <div class="col-sm-8 service-content">
-                <h2>Chuyên sản xuất đồ gỗ nội thất từ 2000</h2>
+                <h2>Kinh nghiệm sản xuất đồ gỗ nội thất từ 1980</h2>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque lau-dantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dict eaque ipsa quae abillo inventore veritatis et quasi architecto.</p>
                 <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi</h4>
             </div>

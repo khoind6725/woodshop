@@ -10,9 +10,9 @@
                     data-whitespace="nowrap"
                     data-start="1500">
                     <ul class="nav">
-                        <li><a href="#">Nhà gỗ cổ truyền</a></li>
-                        <li><a href="#">Khuôn cửa</a></li>
-                        <li><a href="#">Đồ nội thất</a></li>
+                        <li><a href="{{ route('front-end.nha-co-truyen') }}">Nhà gỗ cổ truyền</a></li>
+                        <li><a href="{{ route('front-end.khuon-cua') }}">Khuôn cửa</a></li>
+                        <li><a href="{{ route('front-end.tu-bep') }}">Đồ nội thất</a></li>
                     </ul>
                 </div>
                 <div class="tp-caption sfr tp-resizeme carpenters-h1 type2" 
@@ -20,7 +20,7 @@
                     data-y="320" data-voffset="160" 
                     data-whitespace="nowrap"
                     data-start="900">
-                    <span>thiết kế</span> đồ nội thất<br><span>sản xuất</span> khuôn cửa
+                    <span>thiết kế</span> nội thất<br><span>sản xuất</span> khuôn cửa
                 </div>
             </li>
         @endforeach

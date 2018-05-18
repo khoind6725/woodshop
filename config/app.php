@@ -182,6 +182,7 @@ return [
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         // LaravelCollective
         Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -236,6 +237,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Util' => App\Libraries\Util::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

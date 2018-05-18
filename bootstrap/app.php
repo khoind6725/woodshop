@@ -46,6 +46,9 @@ $app->singleton(
 $app->register(Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class);
 // file END ommited
 
+if (env('APP_DEBUG')) {
+ $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
+}
 /*
 |--------------------------------------------------------------------------
 | Return The Application
